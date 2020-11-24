@@ -1,0 +1,20 @@
+{
+  "name": "rs-css",
+  "version": "1.0.0",
+  "description": "rs css selectors game web-app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rolling-scopes-school/abdulloh76-JS2020Q3.git"
+  },
+  "keywords": [
+    "css",
+    "selectors"
+  ],
+  "author": "Abdullokh Musaev",
+  "license": "ISC",
+  "homepage": "https://github.com/rolling-scopes-school/abdulloh76-JS2020Q3#readme"
+}
