@@ -1,95 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>RS Selectors</title>
-   <link rel="icon" href="https://www.flaticon.com/svg/static/icons/svg/1073/1073461.svg">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RS Selectors</title>
+    <link rel="icon" href="https://www.flaticon.com/svg/static/icons/svg/1073/1073461.svg" />
 
-   <header></header>
+    <!-- Google Fonts -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+    />
+    <!-- Bootstrap core CSS -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Material Design Bootstrap -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css"
+      rel="stylesheet"
+    />
 
-   <main>
+    <link rel="stylesheet" href="./src/sass/style.css" />
+  </head>
 
+  <body>
+    <header></header>
+
+    <main>
       <div class="game">
-         <div class="game__view">
-            <div class="table">
+        <div class="game__view">
+          <div class="table">asdf</div>
+        </div>
 
-            </div>
-         </div>
+        <div class="game__editor">
+          <div class="editor-css editor">
+            <table class="table">
+              <thead class="">
+                <tr>
+                  <th scope="col">CSS</th>
+                  <th scope="col">style.css</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>
+                    <div class="editor__selector">
+                      <input class="selector" type="text" placeholder="Type in a CSS selector" />
+                      <span class="enter">enter</span>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">2</th>
+                  <td>Jacob</td>
+                </tr>
+                <tr>
+                  <th scope="row">3</th>
+                  <td>Larry</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
 
-         <div class="game__editor">
-            <div class="css-editor editor">
-               <div class="editor__header css-editor__header">
-                  <p class="editor__title">CSS Editor</p>
-                  <p class="editor__subtitle">style.css</p>
-               </div>
+          <div class="editor-html editor">
+            <table class="table">
+               <thead class="">
+                 <tr>
+                   <th scope="col">HTML</th>
+                   <th scope="col">index.html</th>
+                 </tr>
+               </thead>
+               <tbody>
+                 <tr>
+                   <th scope="row">1</th>
+                   <td>Sarvar</td>
+                 </tr>
+                 <tr>
+                   <th scope="row">2</th>
+                   <td>Jacob</td>
+                 </tr>
+                 <tr>
+                   <th scope="row">3</th>
+                   <td>Larry</td>
+                 </tr>
+               </tbody>
+             </table>
+          </div>
 
-               <div class="editor__container">
-                  <div class="editor__numbers">
-                     <!-- p*20 -->
-                  </div>
+        </div>
 
-                  <div class="editor__code">
-                     <div class="editor__selector">
-                        <input class="selector" type="text" placeholder="Type in a CSS selector">
-                        <span class="enter"></span>
-                     </div>
-                     <!-- p*19 bla-bla-bla-bla -->
-                  </div>
-               </div>
-            </div>
-
-            <div class="html-viewer editor">
-               <div class="editor__header viewer__header">
-                  <p class="editor__title">HTML Viewer</p>
-                  <p class="editor__subtitle">table.html</p>
-               </div>
-
-               <div class="editor__container">
-                  <div class="editor__numbers">
-                     <!-- p*20 -->
-                  </div>
-
-                  <div class="editor__code html-code">
-                     <!-- p*20 bla-bla-bla-bla -->
-                  </div>
-               </div>
-            </div>
-
-         </div>
       </div>
 
       <div class="levels">
-         <h2 class="levels__title">Level</h2>
-         
-         <div class="levels-steps">
-            
-            <button class="step">
-               <span class="step-check"></span>
-               <span class="level-number">1</span>
-               <p class="level-title">bla-bla-bla</p>
-            </button>
-            <!-- button * 10-20 -->
-         </div>
+        <h2 class="levels__title">Level</h2>
 
-         <button class="levels__reset">Reset Progress</button>
+        <div class="levels-steps">
+          <button class="step">
+            <span class="step-check"></span>
+            <span class="level-number">1</span>
+            <p class="level-title">bla-bla-bla</p>
+          </button>
+          <!-- button * 10-20 -->
+        </div>
+
+        <button class="levels__reset">Reset Progress</button>
       </div>
+    </main>
 
-   </main>
-
-   <footer>
+    <footer>
       <a class="my-github" href="https://github.com/abdulloh76/">
-         <img src="" alt="">
-         <p class="github-username">abdulloh76</p> 
+        <svg class="" height="32" viewBox="0 0 16 16" version="1.1" width="32" aria-hidden="true">
+          <path
+            fill-rule="evenodd"
+            d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"
+          ></path>
+        </svg>
+        <p class="github-username">abdulloh76</p>
       </a>
       <p class="">JS-2020Q3</p>
       <a class="rs-school" href="https://rs.school/js/">
-         <img src="https://rs.school/images/rs_school_js.svg" alt="">
+        <img src="https://rs.school/images/rs_school_js.svg" alt="" height="50px" />
       </a>
-   </footer>
+    </footer>
 
 
-</body>
+  </body>
 </html>
