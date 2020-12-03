@@ -36,69 +36,160 @@
 
         <div class="game__editor">
           <div class="editor-css editor">
+            <div class="editor__header css-editor__header">
+              <p class="editor__title">CSS Editor</p>
+              <p class="editor__subtitle">style.css</p>
+            </div>
             <table class="table">
-              <thead class="">
-                <tr>
-                  <th scope="col">CSS</th>
-                  <th scope="col">style.css</th>
-                </tr>
-              </thead>
               <tbody>
                 <tr>
                   <th scope="row">1</th>
                   <td>
                     <div class="editor__selector">
                       <input class="selector" type="text" placeholder="Type in a CSS selector" />
-                      <span class="enter">enter</span>
+                      <button class="enter">enter</button>
                     </div>
                   </td>
                 </tr>
                 <tr>
                   <th scope="row">2</th>
-                  <td>Jacob</td>
+                  <td>{</td>
                 </tr>
                 <tr>
                   <th scope="row">3</th>
-                  <td>Larry</td>
+                  <td>/* Styles would go here */</td>
+                </tr>
+                <tr>
+                  <th scope="row">4</th>
+                  <td>}</td>
+                </tr>
+                <tr>
+                  <th scope="row">5</th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th scope="row">6</th>
+                  <td>/*</td>
+                </tr>
+                <tr>
+                  <th scope="row">7</th>
+                  <td>Type a number to skip to a level</td>
+                </tr>
+                <tr>
+                  <th scope="row">8</th>
+                  <td>Ex → "5" for level 5</td>
+                </tr>
+                <tr>
+                  <th scope="row">9</th>
+                  <td>*/</td>
+                </tr>
+                <tr>
+                  <th scope="row">10</th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th scope="row">11</th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th scope="row">12</th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th scope="row">13</th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th scope="row">14</th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th scope="row">15</th>
+                  <td></td>
                 </tr>
               </tbody>
             </table>
           </div>
 
           <div class="editor-html editor">
+            <div class="editor__header viewer__header">
+              <p class="editor__title">HTML Viewer</p>
+              <p class="editor__subtitle">game.html</p>
+            </div>
             <table class="table">
-               <thead class="">
-                 <tr>
-                   <th scope="col">HTML</th>
-                   <th scope="col">index.html</th>
-                 </tr>
-               </thead>
-               <tbody>
-                 <tr>
-                   <th scope="row">1</th>
-                   <td>Sarvar</td>
-                 </tr>
-                 <tr>
-                   <th scope="row">2</th>
-                   <td>Jacob</td>
-                 </tr>
-                 <tr>
-                   <th scope="row">3</th>
-                   <td>Larry</td>
-                 </tr>
-               </tbody>
-             </table>
+              <table class="table">
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td> </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>{</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>/* Styles would go here */</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">4</th>
+                    <td>}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">5</th>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">6</th>
+                    <td>/*</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">7</th>
+                    <td>Type a number to skip to a level</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">8</th>
+                    <td>Ex →"5" for level 5</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">9</th>
+                    <td>*/</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">10</th>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">11</th>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">12</th>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">13</th>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">14</th>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">15</th>
+                    <td></td>
+                  </tr>
+                </tbody>
+            </table>
           </div>
-
         </div>
-
       </div>
 
       <div class="levels">
         <h2 class="levels__title">Level</h2>
 
         <div class="levels-steps">
-          <button class="step">
+          <button class="step button button-primary btn btn-blue-grey">
             <span class="step-check"></span>
             <span class="level-number">1</span>
             <p class="level-title">bla-bla-bla</p>
@@ -125,7 +216,5 @@
         <img src="https://rs.school/images/rs_school_js.svg" alt="" height="50px" />
       </a>
     </footer>
-
-
   </body>
 </html>
