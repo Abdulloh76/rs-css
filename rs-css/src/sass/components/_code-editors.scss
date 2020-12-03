@@ -1,0 +1,45 @@
+.editor {
+  flex-basis: 50%;
+
+  &__header {
+    padding: 4px 10px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #dee2e6;
+    margin-bottom: 5px;
+    p {
+      margin: 0;
+    }
+  }
+
+  .table {
+    margin: 0;
+  }
+  .table tr > * {
+    font-size: 14px;
+    padding: 0;
+    border-right: 1px solid #dee2e6;
+    border-top: 0;
+  }
+  .table td {
+    padding-left: 8px;
+  }
+  [scope='row'] {
+    color: red;
+    width: 28px;
+    text-align: center;
+  }
+
+  &__selector {
+    display: flex;
+    justify-content: space-around;
+  }
+  .selector {
+    border: unset;
+    width: 80%;
+  }
+  .enter {
+    font-size: 12px;
+    border: unset;
+  }
+}
