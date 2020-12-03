@@ -1,0 +1,28 @@
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(to right, #795548 0%, #4e342e 100%);
+  padding: 10px;
+  margin-top: 10px;
+
+  a:hover {
+    opacity: 0.8;
+  }
+
+  p {
+    color: #9e9e9e;
+    font-size: 1.6rem;
+    font-weight: 500;
+    margin: 0 2px;
+  }
+
+  .date {
+    margin: 0 30px;
+  }
+
+  .my-github {
+    display: flex;
+    align-items: center;
+  }
+}
