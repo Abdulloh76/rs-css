@@ -1,0 +1,22 @@
+.button {
+  display: flex;
+  align-items: center;
+  text-transform: unset;
+
+  &-primary {
+    font-size: 1.5rem;
+    width: 100%;
+    margin: 0 0 5px 0;
+    padding: 5px 15px;
+  }
+
+  &-active {
+    background-color: #bdbdbd;
+  }
+
+  .levels &-reset {
+    font-size: 1.8rem;
+    justify-content: center;
+    padding: 15px;
+  }
+}
