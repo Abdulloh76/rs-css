@@ -1,0 +1,237 @@
+.pool {
+  position: relative;
+  height: $table-height;
+  width: $table-width;
+  margin: auto;
+  border: $border-width solid $border-color;
+  border-radius: $border-radius;
+
+  &-carpet {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: space-between;
+    width: 100%;
+    height: 100%;
+    background-color: $table-dark-color;
+    box-shadow: 0px 0px 10px 3px #052f18 inset;
+    background: radial-gradient(ellipse at center, $table-light-color 0%, $table-dark-color 85%);
+
+    .quarter {
+      position: relative;
+      display: inline-block;
+      width: calc(50% - #{$quarter-border-width / 2});
+      height: calc(50% - #{$quarter-border-width / 2});
+      border: $quarter-border-width $table-light-color solid;
+      border-radius: 5px;
+    }
+  }
+}
+
+.pocket {
+  display: inline-block;
+  position: absolute;
+  width: $hole-size;
+  height: $hole-size;
+  background-color: $pocket-color;
+
+  &-top {
+    top: -$border-width;
+    &-left {
+      left: -$border-width;
+      border-top-left-radius: $border-radius;
+    }
+    &-center {
+      width: $hole-size * 1.3;
+      height: $hole-size / 2;
+      left: calc(50% - #{$hole-size * 1.3 / 2});
+    }
+    &-right {
+      right: -$border-width;
+      border-top-right-radius: $border-radius;
+    }
+  }
+  &-bottom {
+    bottom: -$border-width;
+    &-left {
+      left: -$border-width;
+      border-bottom-left-radius: $border-radius;
+    }
+    &-center {
+      width: $hole-size * 1.3;
+      height: $hole-size / 2;
+      left: calc(50% - #{$hole-size * 1.3 / 2});
+    }
+    &-right {
+      right: -$border-width;
+      border-bottom-right-radius: $border-radius;
+    }
+  }
+}
+
+.hole {
+  display: inline-block;
+  position: absolute;
+  width: $hole-size;
+  height: $hole-size;
+  border-radius: 50%;
+  background: radial-gradient(circle at center, #262626 25%, #333333 45%, #404040 70%, #595959 85%);
+
+  &-top {
+    top: -$border-width / 2;
+    &-left {
+      left: -$border-width / 2;
+      border-top-left-radius: $border-radius;
+    }
+    &-center {
+      top: -$border-width / 1.2;
+      left: calc(50% - #{$hole-size / 2});
+    }
+    &-right {
+      right: -$border-width / 2;
+      border-top-right-radius: $border-radius;
+    }
+  }
+  &-bottom {
+    bottom: -$border-width / 2;
+    &-left {
+      left: -$border-width / 2;
+      border-bottom-left-radius: $border-radius;
+    }
+    &-center {
+      left: calc(50% - #{$hole-size / 2});
+      bottom: -$border-width / 1.2;
+    }
+    &-right {
+      right: -$border-width / 2;
+      border-bottom-right-radius: $border-radius;
+    }
+  }
+}
+
+ball {
+  position: absolute;
+  display: inline-block;
+  width: $ball-size;
+  height: $ball-size;
+  border-radius: 50%;
+  z-index: 2;
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    background: rgba(255, 255, 255, 0.7);
+    height: 35%;
+    width: 35%;
+    top: 15%;
+    left: 15%;
+    border-radius: 50%;
+    transform: skew(-0.025turn);
+  }
+  &::after {
+    width: 40%;
+    height: 40%;
+    background: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 45%;
+    left: 45%;
+    transform: skew(-0.05turn);
+    font-weight: bold;
+    color: #000;
+    text-align: center;
+    line-height: 1.3em;
+  }
+  &.one {
+    background-color: $one-color;
+    &::after {
+      content: '1';
+    }
+  }
+  &.two {
+    background-color: $two-color;
+    &::after {
+      content: '2';
+    }
+  }
+  &.three {
+    background-color: $three-color;
+    &::after {
+      content: '3';
+    }
+  }
+  &.four {
+    background-color: $four-color;
+    &::after {
+      content: '4';
+    }
+  }
+  &.five {
+    background-color: $five-color;
+    &::after {
+      content: '5';
+    }
+  }
+  &.six {
+    background-color: $six-color;
+    &::after {
+      content: '6';
+    }
+  }
+  &.seven {
+    background-color: $seven-color;
+    &::after {
+      content: '7';
+    }
+  }
+  &.eight {
+    background-color: $eight-color;
+    &::after {
+      content: '8';
+    }
+  }
+  &.nine {
+    background-color: $nine-color;
+    &::after {
+      content: '9';
+    }
+  }
+  &.ten {
+    background-color: $ten-color;
+    &::after {
+      content: '10';
+    }
+  }
+  &.eleven {
+    background-color: $eleven-color;
+    &::after {
+      content: '11';
+    }
+  }
+  &.twelve {
+    background-color: $twelve-color;
+    &::after {
+      content: '12';
+    }
+  }
+  &.thirteen {
+    background-color: $thirteen-color;
+    &::after {
+      content: '13';
+    }
+  }
+  &.fourteen {
+    background-color: $fourteen-color;
+    &::after {
+      content: '14';
+    }
+  }
+  &.fifteen {
+    background-color: $fifteen-color;
+    &::after {
+      content: '15';
+    }
+  }
+}
