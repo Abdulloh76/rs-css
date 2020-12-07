@@ -5,8 +5,15 @@
   display: flex;
   flex-direction: column;
 
+  &-task {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 400;
+  }
+
   &__editor {
     display: flex;
+    margin-top: 4px;
     border-radius: 5px;
     border: 8px rgba($color: #000000, $alpha: 0.6) solid;
 
