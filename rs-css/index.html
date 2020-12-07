@@ -21,6 +21,9 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css"
       rel="stylesheet"
     />
+    
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/highlight.min.js"></script>
 
     <link rel="stylesheet" href="./src/sass/style.css" />
   </head>
@@ -35,10 +38,12 @@
             <quarter class="quarter" id="quarter-first"> </quarter>
 
             <quarter class="quarter" id="quarter-second">
-              <ball class="vilet" id="ball"></ball>
+              <ball class="orange" id="ball">
             </quarter>
 
-            <quarter class="quarter" id="quarter-third"> </quarter>
+            <quarter class="quarter" id="quarter-third"> 
+              <ball class="violet">
+            </quarter>
 
             <quarter class="quarter" id="quarter-forth"> </quarter>
           </carpet>
@@ -63,75 +68,44 @@
               <p class="editor__title">CSS Editor</p>
               <p class="editor__subtitle">style.css</p>
             </div>
-            <table class="table">
-              <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>
-                    <div class="editor__selector">
-                      <input class="selector" type="text" placeholder="Type in a CSS selector" />
-                      <button class="enter">enter</button>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>{</td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>/* Styles would go here */</td>
-                </tr>
-                <tr>
-                  <th scope="row">4</th>
-                  <td>}</td>
-                </tr>
-                <tr>
-                  <th scope="row">5</th>
-                  <td></td>
-                </tr>
-                <tr>
-                  <th scope="row">6</th>
-                  <td>/*</td>
-                </tr>
-                <tr>
-                  <th scope="row">7</th>
-                  <td>Type a number to skip to a level</td>
-                </tr>
-                <tr>
-                  <th scope="row">8</th>
-                  <td>Ex → "5" for level 5</td>
-                </tr>
-                <tr>
-                  <th scope="row">9</th>
-                  <td>*/</td>
-                </tr>
-                <tr>
-                  <th scope="row">10</th>
-                  <td></td>
-                </tr>
-                <tr>
-                  <th scope="row">11</th>
-                  <td></td>
-                </tr>
-                <tr>
-                  <th scope="row">12</th>
-                  <td></td>
-                </tr>
-                <tr>
-                  <th scope="row">13</th>
-                  <td></td>
-                </tr>
-                <tr>
-                  <th scope="row">14</th>
-                  <td></td>
-                </tr>
-                <tr>
-                  <th scope="row">15</th>
-                  <td></td>
-                </tr>
-              </tbody>
-            </table>
+            <div class="editor__body">
+              <ul class="editor__counter">
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+                <li>7</li>
+                <li>8</li>
+                <li>9</li>
+                <li>10</li>
+                <li>11</li>
+                <li>12</li>
+                <li>13</li>
+                <li>14</li>
+                <li>15</li>
+              </ul>
+              <div class="editor__code">
+                <div class="editor__selector">
+                  <input class="selector" type="text" placeholder="Type in a CSS selector" />
+                  <button class="enter btn btn-primary">enter</button>
+                </div>
+
+                <code class="language-css">
+                  <p>{</p>
+                  <p>/* Styles would go here */</p>
+                  <p>}</p>
+                  <p>/* ..... */</p>
+                  <p>/*</p>
+                  <p>Type a number to skip to a level</p>
+                  <p>Ex →"5" for level 5</p>
+                  <p>*/</p>
+                </code>
+                
+                <button class="btn btn-primary editor-help">Help</button>
+              </div>
+            </div>
           </div>
 
           <div class="editor-html editor">
@@ -139,70 +113,37 @@
               <p class="editor__title">HTML Viewer</p>
               <p class="editor__subtitle">pool.html</p>
             </div>
-            <table class="table">
-              <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td></td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>{</td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>/* Styles would go here */</td>
-                </tr>
-                <tr>
-                  <th scope="row">4</th>
-                  <td>}</td>
-                </tr>
-                <tr>
-                  <th scope="row">5</th>
-                  <td></td>
-                </tr>
-                <tr>
-                  <th scope="row">6</th>
-                  <td>/*</td>
-                </tr>
-                <tr>
-                  <th scope="row">7</th>
-                  <td>Type a number to skip to a level</td>
-                </tr>
-                <tr>
-                  <th scope="row">8</th>
-                  <td>Ex →"5" for level 5</td>
-                </tr>
-                <tr>
-                  <th scope="row">9</th>
-                  <td>*/</td>
-                </tr>
-                <tr>
-                  <th scope="row">10</th>
-                  <td></td>
-                </tr>
-                <tr>
-                  <th scope="row">11</th>
-                  <td></td>
-                </tr>
-                <tr>
-                  <th scope="row">12</th>
-                  <td></td>
-                </tr>
-                <tr>
-                  <th scope="row">13</th>
-                  <td></td>
-                </tr>
-                <tr>
-                  <th scope="row">14</th>
-                  <td></td>
-                </tr>
-                <tr>
-                  <th scope="row">15</th>
-                  <td></td>
-                </tr>
-              </tbody>
-            </table>
+            <div class="editor__body">
+              <ul class="editor__counter">
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+                <li>7</li>
+                <li>8</li>
+                <li>9</li>
+                <li>10</li>
+                <li>11</li>
+                <li>12</li>
+                <li>13</li>
+                <li>14</li>
+                <li>15</li>
+              </ul>
+              <div class="editor__code">
+                <code class="language-html">
+                  <p>&#x3C;quarter class=&#x22;quarter&#x22; id=&#x22;quarter-first&#x22; /&#x3E</p>
+                  <p>&#x3C;quarter class=&#x22;quarter&#x22;&#x3E;</p>
+                  <p>&#x3C;ball class=&#x22;orange&#x22;&#x3E;</p>
+                  <p>&#x3C;/quarter&#x3E</p>
+                  <p>&#x3C;quarter class=&#x22;quarter&#x22;&#x3E;</p>
+                  <p>&#x3C;ball class=&#x22;violet&#x22;&#x3E;</p>
+                  <p>&#x3C;/quarter&#x3E</p>
+                  <p>&#x3C;quarter class=&#x22;quarter&#x22; /&#x3E</p>
+                </code>
+                </div>
+            </div>
           </div>
         </div>
       </div>
@@ -335,6 +276,12 @@
       </a>
     </footer>
 
+
+    <script>
+      document.querySelectorAll('code').forEach((block) => {
+        hljs.highlightBlock(block);
+      });
+    </script>
     <script type="module" src="./dist/bundle.js"></script>
   </body>
 </html>

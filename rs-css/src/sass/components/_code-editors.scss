@@ -1,46 +1,71 @@
 .editor {
-  flex-basis: 50%;
+  &-css {
+    flex-basis: 45%;
+  }
+  &-html {
+    flex-basis: 55%;
+  }
 
   &__header {
     padding: 4px 10px;
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid #dee2e6;
-    margin-bottom: 5px;
     font-size: 1.6rem;
     p {
       margin: 0;
     }
   }
 
-  .table {
+  &__body {
+    display: flex;
+  }
+  
+  &__counter {
+    padding: 3px 5px;
+    flex-basis: 5%;
+    text-align: right;
     margin: 0;
+    border-right: 2px solid #dee2e6;
+    border-left: 2px solid #dee2e6;
+    
+    li {
+      font-size: 14px;
+      list-style: none;
+    }
   }
-  .table tr > * {
-    font-size: 14px;
-    padding: 0;
-    border-right: 1px solid #dee2e6;
-    border-top: 0;
-  }
-  .table td {
-    padding-left: 8px;
-  }
-  [scope='row'] {
-    color: red;
-    width: 28px;
-    text-align: center;
+  
+  &__code {
+    flex-basis: 95%;
+    padding: 2px;
+    code {
+      padding: 0 3px;
+    }
+    p {
+      font-size: 14px;
+      margin: 0;
+    }
   }
 
   &__selector {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
   }
   .selector {
+    font-size: 14px;
+    height: 21px;
     border: unset;
     width: 80%;
   }
   .enter {
     font-size: 12px;
-    border: unset;
+    padding: 3px 8px;
+    margin: 0;
+    text-transform: unset;
+  }
+  &-help {
+    text-transform: unset;
+    font-size: 14px;
+    padding: 5px 16px;
   }
 }
