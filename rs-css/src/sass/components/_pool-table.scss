@@ -18,8 +18,7 @@
     box-shadow: 0px 0px 10px 3px #052f18 inset;
     background: radial-gradient(ellipse at center, $table-light-color 0%, $table-dark-color 85%);
 
-    .quarter {
-      position: relative;
+    quarter {
       display: inline-block;
       width: calc(50% - #{$quarter-border-width / 2});
       height: calc(50% - #{$quarter-border-width / 2});
@@ -70,16 +69,24 @@
   }
 }
 
-.hole {
+hole {
   display: inline-block;
   position: absolute;
   width: $hole-size;
   height: $hole-size;
   border-radius: 50%;
   background: radial-gradient(circle at center, #262626 25%, #333333 45%, #404040 70%, #595959 85%);
-
+}
+.hole {
   &-top {
     top: -$border-width / 2;
+  }
+  &-bottom {
+    bottom: -$border-width / 2;
+  }
+}
+#hole {
+  &-top {
     &-left {
       left: -$border-width / 2;
       border-top-left-radius: $border-radius;
@@ -94,7 +101,6 @@
     }
   }
   &-bottom {
-    bottom: -$border-width / 2;
     &-left {
       left: -$border-width / 2;
       border-bottom-left-radius: $border-radius;
@@ -117,6 +123,7 @@ ball {
   height: $ball-size;
   border-radius: 50%;
   z-index: 2;
+  background-color: rgb(random(255), random(255), random(255)); // not random 😭
 
   &::before {
     content: '';
@@ -131,6 +138,7 @@ ball {
     transform: skew(-0.025turn);
   }
   &::after {
+    content: quote(random($limit: 15)); // there will not be random number for user 😭
     width: 40%;
     height: 40%;
     background: #fff;
@@ -140,98 +148,80 @@ ball {
     left: 45%;
     transform: skew(-0.05turn);
     font-weight: bold;
-    color: #000;
+    color: #000000;
     text-align: center;
     line-height: 1.3em;
   }
-  &.one {
-    background-color: $one-color;
-    &::after {
-      content: '1';
-    }
+  &.yellow {
+    background-color: $yellow-color;
   }
-  &.two {
-    background-color: $two-color;
-    &::after {
-      content: '2';
-    }
+  &.blue {
+    background-color: $blue-color;
   }
-  &.three {
-    background-color: $three-color;
-    &::after {
-      content: '3';
-    }
+  &.red {
+    background-color: $red-color;
   }
-  &.four {
-    background-color: $four-color;
-    &::after {
-      content: '4';
-    }
+  &.violet {
+    background-color: $violet-color;
   }
-  &.five {
-    background-color: $five-color;
-    &::after {
-      content: '5';
-    }
+  &.orange {
+    background-color: $orange-color;
   }
-  &.six {
-    background-color: $six-color;
-    &::after {
-      content: '6';
-    }
+  &.aqua {
+    background-color: $aqua-color;
   }
-  &.seven {
-    background-color: $seven-color;
-    &::after {
-      content: '7';
-    }
+  &.valencia {
+    background-color: $valencia-color;
   }
-  &.eight {
-    background-color: $eight-color;
-    &::after {
-      content: '8';
-    }
+  &.black {
+    background-color: $black-color;
   }
-  &.nine {
-    background-color: $nine-color;
-    &::after {
-      content: '9';
-    }
+}
+
+#ball {
+  &-1::after {
+    content: '1';
   }
-  &.ten {
-    background-color: $ten-color;
-    &::after {
-      content: '10';
-    }
+  &-2::after {
+    content: '2';
   }
-  &.eleven {
-    background-color: $eleven-color;
-    &::after {
-      content: '11';
-    }
+  &-3::after {
+    content: '3';
   }
-  &.twelve {
-    background-color: $twelve-color;
-    &::after {
-      content: '12';
-    }
+  &-4::after {
+    content: '4';
   }
-  &.thirteen {
-    background-color: $thirteen-color;
-    &::after {
-      content: '13';
-    }
+  &-5::after {
+    content: '5';
   }
-  &.fourteen {
-    background-color: $fourteen-color;
-    &::after {
-      content: '14';
-    }
+  &-6::after {
+    content: '6';
   }
-  &.fifteen {
-    background-color: $fifteen-color;
-    &::after {
-      content: '15';
-    }
+  &-7::after {
+    content: '7';
+  }
+  &-8::after {
+    content: '8';
+  }
+  &-9::after {
+    content: '9';
+  }
+  &-10::after {
+    content: '10';
+  }
+  &-11::after {
+    content: '11';
+  }
+  &-12::after {
+    content: '12';
+  }
+  &-13::after {
+    content: '13';
+  }
+  &-14::after {
+    content: '14';
+  }
+  &-15::after {
+    content: '15';
   }
 }

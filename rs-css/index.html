@@ -32,29 +32,29 @@
 
         <div class="pool">
           <carpet class="pool-carpet">
-            <quarter class="quarter quarter-first"> </quarter>
+            <quarter class="quarter" id="quarter-first"> </quarter>
 
-            <quarter class="quarter quarter-second">
-              <ball class="one"></ball>
+            <quarter class="quarter" id="quarter-second">
+              <ball class="vilet" id="ball"></ball>
             </quarter>
 
-            <quarter class="quarter quarter-third"> </quarter>
+            <quarter class="quarter" id="quarter-third"> </quarter>
 
-            <quarter class="quarter quarter-forth"> </quarter>
+            <quarter class="quarter" id="quarter-forth"> </quarter>
           </carpet>
 
           <pocket class="pocket pocket-top pocket-top-left"></pocket>
-          <hole class="hole hole-top hole-top-left"></hole>
+          <hole class="hole-top" id="hole-top-left"></hole>
           <pocket class="pocket pocket-top pocket-top-center"></pocket>
-          <hole class="hole hole-top hole-top-center"></hole>
+          <hole class="hole-top" id="hole-top-center"></hole>
           <pocket class="pocket pocket-top pocket-top-right"></pocket>
-          <hole class="hole hole-top hole-top-right"></hole>
+          <hole class="hole-top" id="hole-top-right"></hole>
           <pocket class="pocket pocket-bottom pocket-bottom-left"></pocket>
-          <hole class="hole hole-bottom hole-bottom-left"></hole>
+          <hole class="hole-bottom" id="hole-bottom-left"></hole>
           <pocket class="pocket pocket-bottom pocket-bottom-center"></pocket>
-          <hole class="hole hole-bottom hole-bottom-center"></hole>
+          <hole class="hole-bottom" id="hole-bottom-center"></hole>
           <pocket class="pocket pocket-bottom pocket-bottom-right"></pocket>
-          <hole class="hole hole-bottom hole-bottom-right"></hole>
+          <hole class="hole-bottom" id="hole-bottom-right"></hole>
         </div>
 
         <div class="game__editor">
@@ -137,7 +137,7 @@
           <div class="editor-html editor">
             <div class="editor__header viewer__header">
               <p class="editor__title">HTML Viewer</p>
-              <p class="editor__subtitle">game.html</p>
+              <p class="editor__subtitle">pool.html</p>
             </div>
             <table class="table">
               <tbody>
@@ -334,5 +334,7 @@
         <p class="github-username">abdulloh76</p>
       </a>
     </footer>
+
+    <script type="module" src="./dist/bundle.js"></script>
   </body>
 </html>
