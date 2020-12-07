@@ -1,0 +1,19 @@
+[
+  {
+    "id": 1,
+    "title": "Element",
+    "selector": "ball",
+    "description": "Select ball",
+    "carpet": [
+      [
+        {
+          "position": [25, 35]
+        }
+      ],
+      [],
+      [],
+      []
+    ],
+    "holes": []
+  }
+]
