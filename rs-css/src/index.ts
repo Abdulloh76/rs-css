@@ -1,4 +1,5 @@
 import GenerateContent from './ts/GenerateContent';
+import { poolHover, codeHover } from './ts/hoverEffects'
 
 fetch('./src/levels.json')
   .then((res) => res.json())
@@ -11,7 +12,10 @@ fetch('./src/levels.json')
     }
 
     const page = new GenerateContent(levels, levelsProgress);
-    page.generateLevels();
+    page.generateLevels().generateGame(3);
+
+    document.querySelector('.pool').addEventListener('mousemove', poolHover);
+    document.querySelector('.editor-html code').addEventListener('mousemove', codeHover);
   });
 
 /*

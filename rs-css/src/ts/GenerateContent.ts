@@ -23,7 +23,7 @@ const generateElementText = (
     result += ` <span class="hljs-attr">class</span>=<span class="hljs-string">"${className}"</span>`;
   }
   if (id) {
-    result += ` <span class="hljs-attr">id</span>=<span class="hljs-string">"${id}"</span>`;
+    result += ` <span class="hljs-attr">id</span>=<span class="hljs-string">"${tagName}-${id}"</span>`;
   }
   if (hasContent) result += `${tagClosing}`;
   else result += ` /${tagClosing}`;
@@ -63,17 +63,17 @@ export default class GenerateContent {
       // for carpet ↓
       const quarterEl = create('quarter', `${quarter.class || ''}`, null, carpet, [
         'id',
-        quarter.id || '',
+        `quarter-${quarter.id}` || '',
       ]);
       if (quarter.balls) {
         quarter.balls.forEach((ball) => {
           // for code-editor ↓
           const ballCodeText = generateElementText('ball', ball.id, ball.class);
-          create('p', 'tab ball-p', ballCodeText, quarterCode);
+          create('p', 'ball-p tab', ballCodeText, quarterCode);
           // for carpet ↓
           const ballEl = create('ball', `${ball.class || ''}`, null, quarterEl, [
             'id',
-            `${ball.id || ''}`,
+            `ball-${ball.id || ''}`,
           ]);
           ballEl.style.left = `${ball.position[0]}%`;
           ballEl.style.top = `${ball.position[1]}%`;
