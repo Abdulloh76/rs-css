@@ -2,29 +2,104 @@ import create from './utils/create';
 import { Level } from './Interfaces';
 
 const pool = document.querySelector('.pool');
-const htmlCodeBlock = document.querySelectorAll('.editor-html td');
-const holes = document.querySelectorAll('hole');
+const carpet = document.querySelector('.pool-carpet');
+const htmlCodeBlock = document.querySelector('.editor-html code');
+// const holes = document.querySelectorAll('hole');
 const selectorInput = document.querySelector('.editor__selector input');
 const selectorEnter = document.querySelector('.editor__selector .enter');
 const levelsBlock = document.querySelector('.levels-steps');
 
+const tagOpening = '&lt;';
+const tagClosing = '&gt;';
+
+const generateElementText = (
+  tagName: string,
+  id: string | number,
+  className: string,
+  hasContent = false,
+): string => {
+  let result = `${tagOpening}<span class="hljs-name">${tagName}</span>`;
+  if (className) {
+    result += ` <span class="hljs-attr">class</span>=<span class="hljs-string">"${className}"</span>`;
+  }
+  if (id) {
+    result += ` <span class="hljs-attr">id</span>=<span class="hljs-string">"${id}"</span>`;
+  }
+  if (hasContent) result += `${tagClosing}`;
+  else result += ` /${tagClosing}`;
+
+  return result;
+};
 export default class GenerateContent {
-  levelsObj: Level[];
+  levelsObjects: Level[];
 
   levelButtons: HTMLElement[];
 
   levelsProgress: [number, string][];
 
-  constructor(levelsObj: Level[], levelsProgress: [number, string][]) {
-    this.levelsObj = levelsObj;
+  constructor(levelsObjects: Level[], levelsProgress: [number, string][]) {
+    this.levelsObjects = levelsObjects;
     this.levelsProgress = levelsProgress;
     this.levelButtons = [];
   }
 
-  generatePool() {}
+  generateGame(levelNumber: number) {
+    document.querySelector('.button-active').classList.remove('button-active')
+    this.levelButtons[levelNumber - 1].classList.add('button-active');
+    localStorage.setItem('currentLevel', levelNumber.toString());
+    carpet.innerHTML = '';
+    htmlCodeBlock.innerHTML = '';
+    const quarters = this.levelsObjects[levelNumber - 1].carpet;
+    // CARPET
+    quarters.forEach((quarter) => {
+      const quarterCodeText = generateElementText(
+        'quarter',
+        quarter.id,
+        quarter.class,
+        Boolean(quarter.balls),
+      );
+      // for code-editor ↓
+      const quarterCode = create('p', 'quarter-p', quarterCodeText, htmlCodeBlock);
+      // for carpet ↓
+      const quarterEl = create('quarter', `${quarter.class || ''}`, null, carpet, [
+        'id',
+        quarter.id || '',
+      ]);
+      if (quarter.balls) {
+        quarter.balls.forEach((ball) => {
+          // for code-editor ↓
+          const ballCodeText = generateElementText('ball', ball.id, ball.class);
+          create('p', 'tab ball-p', ballCodeText, quarterCode);
+          // for carpet ↓
+          const ballEl = create('ball', `${ball.class || ''}`, null, quarterEl, [
+            'id',
+            `${ball.id || ''}`,
+          ]);
+          ballEl.style.left = `${ball.position[0]}%`;
+          ballEl.style.top = `${ball.position[1]}%`;
+          if (!ball.class) {
+            ballEl.style.background = `rgb(${Math.random() * 255}, ${Math.random() * 255}, ${
+              Math.random() * 255
+            })`;
+          }
+        });
+        // for code-editor ↓
+        quarterCode.innerHTML += `${tagOpening}/<span class="hljs-name">quarter</span>${tagClosing}`;
+      }
+    });
+
+    // HOLES (if are there)
+    const [holes] = [this.levelsObjects[levelNumber - 1].holes];
+    if (holes) {
+      holes.forEach((hole) => {
+        const holeCodeText = generateElementText('hole', hole.id, hole.class)
+        create('p', 'hole-p', holeCodeText, htmlCodeBlock);
+      })
+    }
+  }
 
   generateLevels() {
-    for (let i = 0; i < this.levelsObj.length; i += 1) {
+    for (let i = 0; i < this.levelsObjects.length; i += 1) {
       const levelStatus = this.levelsProgress[i] ? this.levelsProgress[i][1] : 'check';
       const levelButton = create(
         'button',
@@ -34,10 +109,11 @@ export default class GenerateContent {
               d="m0 274.226 176.549 176.886 339.007-338.672-48.67-47.997-290.337 290-128.553-128.552z"
             />
           </svg>`,
-        null, ['level', `${this.levelsObj[i].id}`],
+        null,
+        ['level', `${this.levelsObjects[i].id}`],
       );
-      create('span', 'level-number', `${this.levelsObj[i].id}`, levelButton);
-      create('p', 'level-title', `${this.levelsObj[i].title}`, levelButton);
+      create('span', 'level-number', `${this.levelsObjects[i].id}`, levelButton);
+      create('p', 'level-title', `${this.levelsObjects[i].title}`, levelButton);
       this.levelButtons.push(levelButton);
       levelsBlock.append(levelButton);
     }
