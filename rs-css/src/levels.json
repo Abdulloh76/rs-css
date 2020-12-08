@@ -5,15 +5,24 @@
     "selector": "ball",
     "description": "Select ball",
     "carpet": [
-      [
-        {
-          "position": [25, 35]
-        }
-      ],
-      [],
-      [],
-      []
+      {
+        "class": "quarter",
+        "id": "quarter-first",
+        "balls":[
+          {
+            "position": [25, 35]
+          }
+        ]
+      },
+      {},
+      {},
+      {}
     ],
-    "holes": []
+    "holes": [
+      {
+        "class": "hole-top",
+        "id": "hole-top-center"
+      }
+    ]
   }
 ]
