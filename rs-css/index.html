@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>RS Selectors</title>
-    <link rel="icon" href="https://www.flaticon.com/svg/static/icons/svg/1073/1073461.svg" />
+    <title>RS Billiards</title>
+    <link rel="icon" href="https://www.flaticon.com/svg/static/icons/svg/536/536063.svg" />
 
     <!-- Google Fonts -->
     <link
@@ -21,9 +21,11 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css"
       rel="stylesheet"
     />
-    
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/styles/default.min.css">
-    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/highlight.min.js"></script>
+
+    <link
+      rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/styles/default.min.css"
+    />
 
     <link rel="stylesheet" href="./src/sass/style.css" />
   </head>
@@ -38,7 +40,7 @@
             <quarter class="quarter" id="quarter-first"> </quarter>
 
             <quarter class="quarter" id="quarter-second">
-              <ball class="orange" id="ball">
+              <ball class="orange" id="ball-9">
             </quarter>
 
             <quarter class="quarter" id="quarter-third"> 
@@ -92,17 +94,17 @@
                   <button class="enter btn btn-primary">enter</button>
                 </div>
 
-                <code class="language-css">
+                <code class="language-css hljs">
                   <p>{</p>
-                  <p>/* Styles would go here */</p>
+                  <p class="tab"><span class="hljs-comment">/* Styles would go here */</span></p>
                   <p>}</p>
-                  <p>/* ..... */</p>
-                  <p>/*</p>
-                  <p>Type a number to skip to a level</p>
-                  <p>Ex →"5" for level 5</p>
-                  <p>*/</p>
+                  <p><span class="hljs-comment">/* ..... */</span></p>
+                  <p><span class="hljs-comment">/*</span></p>
+                  <p><span class="hljs-comment">Type a number to skip to a level</span></p>
+                  <p><span class="hljs-comment">Ex →"5" for level 5</span></p>
+                  <p><span class="hljs-comment">*/</span></p>
                 </code>
-                
+
                 <button class="btn btn-primary editor-help">Help</button>
               </div>
             </div>
@@ -131,18 +133,27 @@
                 <li>14</li>
                 <li>15</li>
               </ul>
-              <div class="editor__code">
-                <code class="language-html">
-                  <p>&#x3C;quarter class=&#x22;quarter&#x22; id=&#x22;quarter-first&#x22; /&#x3E</p>
-                  <p>&#x3C;quarter class=&#x22;quarter&#x22;&#x3E;</p>
-                  <p>&#x3C;ball class=&#x22;orange&#x22;&#x3E;</p>
-                  <p>&#x3C;/quarter&#x3E</p>
-                  <p>&#x3C;quarter class=&#x22;quarter&#x22;&#x3E;</p>
-                  <p>&#x3C;ball class=&#x22;violet&#x22;&#x3E;</p>
-                  <p>&#x3C;/quarter&#x3E</p>
-                  <p>&#x3C;quarter class=&#x22;quarter&#x22; /&#x3E</p>
-                </code>
+              <code class="editor__code language-html hljs html">
+                <div class="quarter">
+                  &lt;<span class="hljs-name">quarter</span>
+                  <span class="hljs-attr">class</span>=<span class="hljs-string">"quarter"</span>
+                  <span class="hljs-attr">id</span>=<span class="hljs-string">"quarter-first"</span
+                  >&gt;
+                  <p class="tab ball">
+                    <span class="hljs-tag">&lt;<span class="hljs-name">ball</span> /&gt;</span>
+                  </p>
+                  &lt;/<span class="hljs-name">quarter</span>&gt;
                 </div>
+                <div class="quarter">
+                  <span class="hljs-tag">&lt;<span class="hljs-name">quarter</span> /&gt;</span>
+                </div>
+                <div class="quarter">
+                  <span class="hljs-tag">&lt;<span class="hljs-name">quarter</span> /&gt;</span>
+                </div>
+                <div class="quarter">
+                  <span class="hljs-tag">&lt;<span class="hljs-name">quarter</span> /&gt;</span>
+                </div>
+              </code>
             </div>
           </div>
         </div>
@@ -276,12 +287,6 @@
       </a>
     </footer>
 
-
-    <script>
-      document.querySelectorAll('code').forEach((block) => {
-        hljs.highlightBlock(block);
-      });
-    </script>
     <script type="module" src="./dist/bundle.js"></script>
   </body>
 </html>
