@@ -89,7 +89,6 @@ hole {
   &-top {
     &-left {
       left: -$border-width / 2;
-      border-top-left-radius: $border-radius;
     }
     &-center {
       top: -$border-width / 1.2;
@@ -97,13 +96,11 @@ hole {
     }
     &-right {
       right: -$border-width / 2;
-      border-top-right-radius: $border-radius;
     }
   }
   &-bottom {
     &-left {
       left: -$border-width / 2;
-      border-bottom-left-radius: $border-radius;
     }
     &-center {
       left: calc(50% - #{$hole-size / 2});
@@ -111,7 +108,6 @@ hole {
     }
     &-right {
       right: -$border-width / 2;
-      border-bottom-right-radius: $border-radius;
     }
   }
 }
@@ -122,6 +118,7 @@ ball {
   width: $ball-size;
   height: $ball-size;
   border-radius: 50%;
+  transition: 0.5s all ease-in;
   z-index: 2;
   background-color: rgb(random(255), random(255), random(255)); // not random 😭
 

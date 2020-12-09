@@ -20,14 +20,14 @@ main {
 p.hovered {
   background: #737373;
 }
-
+// selectors which user should choose
 .increase {
-  transform: scale(1.05);
-  transition: 0.5s ease-in-out transform;
+  transform: scale(1.08);
+  transition: 0.4s ease-in-out transform;
 }
 .decrease {
-  transform: scale(0.95);
-  transition: 0.5s ease-in-out transform;
+  transform: scale(0.92);
+  transition: 0.4s ease-in-out transform;
 }
 quarter.increase {
   transform: scale(1.02);
@@ -35,10 +35,39 @@ quarter.increase {
 quarter.decrease {
   transform: scale(0.98);
 }
-
+// editor on wrong answer
 .to-right {
   transform: translateX(10px);
 }
 .to-left {
   transform: translateX(-10px);
+}
+// balls on correct answer
+ball {
+  left: 0;
+  top: 0;
+}
+.to-top-left {
+  left: -1%;
+  top: -2%;
+}
+.to-top-center {
+  left: 47.5%;
+  top: -3%;
+}
+.to-top-right {
+  left: 96%;
+  top: -2%;
+}
+.to-bottom-left {
+  left: -1%;
+  top: 91%;
+}
+.to-bottom-center {
+  left: 47.5%;
+  top: 93%;
+}
+.to-bottom-right {
+  left: 96%;
+  top: 91%;
 }
