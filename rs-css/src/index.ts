@@ -22,7 +22,6 @@ fetch('./src/levels.json')
     document.querySelector('.levels').addEventListener('click', (e) => {
       const element = e.target as HTMLElement;
       if (element.closest('.level.button')) {
-        // debugger;
         const button = element.closest('.level.button') as HTMLElement;
         page.generateGame(+button.dataset.level);
       } else if (element.closest('.button-reset')) {

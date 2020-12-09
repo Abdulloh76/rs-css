@@ -154,10 +154,12 @@ export default class GenerateContent {
       selectorInput.value = '';
       levelsProgress[this.currentLevel - 1] = [this.currentLevel, checkerClassName];
       if (checkerEl.classList[checkerEl.classList.length - 1].includes('ed')) {
-        const removingClassName = Array.from(checkerEl.classList).find((cl) => cl.includes('ed'))
+        const removingClassName = Array.from(checkerEl.classList).find((cl) => cl.includes('ed'));
         checkerEl.classList.remove(removingClassName);
       }
-      this.levelButtons[this.currentLevel - 1].querySelector('svg').classList.add(`icon-${checkerClassName}`);
+      this.levelButtons[this.currentLevel - 1]
+        .querySelector('svg')
+        .classList.add(`icon-${checkerClassName}`);
       setTimeout(() => this.animations.correctAnswerAnimation(), 400);
       setTimeout(() => this.generateGame(this.currentLevel + 1), 1500);
       localStorage.setItem('levelsProgress', JSON.stringify(levelsProgress));

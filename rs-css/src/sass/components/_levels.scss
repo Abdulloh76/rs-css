@@ -1,7 +1,7 @@
 .levels {
-  flex-basis: 23%;
+  flex-basis: 26%;
   background-color: rgba($color: #212121, $alpha: 0.8);
-  
+
   &__title {
     font-size: 3rem;
     font-weight: 400;
@@ -14,7 +14,6 @@
 }
 
 .level {
-
   &-number {
     margin: 0 15px;
   }
