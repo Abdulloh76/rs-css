@@ -1,6 +1,6 @@
 import create from './utils/create';
 import { Level } from './Interfaces';
-import { SelectorAnimation } from './animationEffects'
+import { Animations } from './animationEffects'
 
 const carpet = document.querySelector('.pool-carpet');
 const htmlCodeBlock = document.querySelector('.editor-html code');
@@ -32,16 +32,16 @@ export default class GenerateContent {
 
   levelButtons: HTMLElement[];
 
-  selectorAnimation: SelectorAnimation;
+  animations: Animations;
 
   constructor(levelsObjects: Level[]) {
     this.levelsObjects = levelsObjects;
     this.levelButtons = [];
-    this.selectorAnimation = new SelectorAnimation(null)
+    this.animations = new Animations(null)
   }
 
   generateGame(levelNumber: number) {
-    this.selectorAnimation.cancelAnimation = false;
+    this.animations.cancelSelectorAnimation = false;
     document.querySelector('.game-task').textContent = this.levelsObjects[levelNumber - 1].description;
     document.querySelector('.button-active').classList.remove('button-active')
     this.levelButtons[levelNumber - 1].classList.add('button-active');
@@ -97,8 +97,11 @@ export default class GenerateContent {
     }
 
     // SELECTOR ANIMATION EFFECTS
-    this.selectorAnimation.selector = this.levelsObjects[levelNumber - 1].selector;
-    this.selectorAnimation.selectorAnimation(false);
+    this.animations.selector = this.levelsObjects[levelNumber - 1].selector;
+    this.animations.selectorAnimation(false);
+
+    this.animations.cancelAnswerAnimation = false;
+    setTimeout(() => this.animations.wrongAnswerAnimation(false), 2000)
   }
 
   generateLevels(levelsProgress: [number, string][]) {

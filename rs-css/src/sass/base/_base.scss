@@ -35,3 +35,10 @@ quarter.increase {
 quarter.decrease {
   transform: scale(0.98);
 }
+
+.to-right {
+  transform: translateX(10px);
+}
+.to-left {
+  transform: translateX(-10px);
+}
