@@ -1,10 +1,11 @@
 import create from './utils/create';
 import { Level } from './Interfaces';
-import { Animations } from './animationEffects'
+import Animations from './animationEffects';
 
 const carpet = document.querySelector('.pool-carpet');
 const htmlCodeBlock = document.querySelector('.editor-html code');
 const levelsBlock = document.querySelector('.levels-steps');
+const selectorInput = document.querySelector('input');
 
 const tagOpening = '&lt;';
 const tagClosing = '&gt;';
@@ -34,21 +35,32 @@ export default class GenerateContent {
 
   animations: Animations;
 
+  currentLevel: number;
+
+  gotHelp: boolean;
+
   constructor(levelsObjects: Level[]) {
     this.levelsObjects = levelsObjects;
     this.levelButtons = [];
-    this.animations = new Animations(null)
+    this.animations = new Animations(null);
+    document.querySelector('form').addEventListener('submit', this.submitHandler);
+    document.querySelector('.editor-help').addEventListener('click', this.getHelp);
   }
 
   generateGame(levelNumber: number) {
+    this.gotHelp = false;
+    if (levelNumber === this.levelsObjects.length + 1) return;
+    this.currentLevel = levelNumber;
     this.animations.cancelSelectorAnimation = false;
-    document.querySelector('.game-task').textContent = this.levelsObjects[levelNumber - 1].description;
-    document.querySelector('.button-active').classList.remove('button-active')
-    this.levelButtons[levelNumber - 1].classList.add('button-active');
-    localStorage.setItem('currentLevel', levelNumber.toString());
+    document.querySelector('.game-task').textContent = this.levelsObjects[
+      this.currentLevel - 1
+    ].description;
+    document.querySelector('.button-active').classList.remove('button-active');
+    this.levelButtons[this.currentLevel - 1].classList.add('button-active');
+    localStorage.setItem('currentLevel', this.currentLevel.toString());
     carpet.innerHTML = '';
     htmlCodeBlock.innerHTML = '';
-    const quarters = this.levelsObjects[levelNumber - 1].carpet;
+    const quarters = this.levelsObjects[this.currentLevel - 1].carpet;
     // CARPET
     quarters.forEach((quarter) => {
       const quarterCodeText = generateElementText(
@@ -88,20 +100,17 @@ export default class GenerateContent {
     });
 
     // HOLES (if are there)
-    const [holes] = [this.levelsObjects[levelNumber - 1].holes];
+    const [holes] = [this.levelsObjects[this.currentLevel - 1].holes];
     if (holes) {
       holes.forEach((hole) => {
-        const holeCodeText = generateElementText('hole', hole.id, hole.class)
+        const holeCodeText = generateElementText('hole', hole.id, hole.class);
         create('p', 'hole-p', holeCodeText, htmlCodeBlock);
-      })
+      });
     }
 
     // SELECTOR ANIMATION EFFECTS
-    this.animations.selector = this.levelsObjects[levelNumber - 1].selector;
+    this.animations.selector = this.levelsObjects[this.currentLevel - 1].selector;
     this.animations.selectorAnimation(false);
-
-    this.animations.cancelAnswerAnimation = false;
-    setTimeout(() => this.animations.wrongAnswerAnimation(false), 2000)
   }
 
   generateLevels(levelsProgress: [number, string][]) {
@@ -127,4 +136,29 @@ export default class GenerateContent {
     }
     return this;
   }
+
+  submitHandler = (): boolean => {
+    this.animations.cancelSelectorAnimation = true;
+    this.animations.cancelAnswerAnimation = false;
+
+    const enteredValue = selectorInput.value;
+    if (!Number.isNaN(+enteredValue)) {
+      this.generateGame(+enteredValue);
+    } else if (enteredValue === this.levelsObjects[this.currentLevel - 1].selector) {
+      selectorInput.value = '';
+      const checkerClassName = this.gotHelp ? 'icon-helped' : 'icon-checked';
+      this.levelButtons[this.currentLevel - 1].querySelector('svg').classList.add(checkerClassName);
+      setTimeout(() => this.animations.correctAnswerAnimation(), 400);
+      setTimeout(() => this.generateGame(this.currentLevel + 1), 1000);
+    } else {
+      this.animations.wrongAnswerAnimation(false);
+    }
+
+    return false;
+  };
+
+  getHelp = () => {
+    this.gotHelp = true;
+    selectorInput.value = this.levelsObjects[this.currentLevel - 1].selector;
+  };
 }

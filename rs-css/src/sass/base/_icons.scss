@@ -7,10 +7,9 @@
 
     &ed {
       fill: green;
-
-      &-help {
-        fill: yellow;
-      }
     }
+  }
+  &-helped {
+    fill: yellow;
   }
 }

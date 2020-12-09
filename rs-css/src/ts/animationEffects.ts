@@ -50,28 +50,31 @@ export default class Animations {
     putAudio.src = './src/put.mp3';
     balls.forEach((el) => {
       const ball = el as HTMLElement;
-      const { left, top } = ball.style
-      ball.style.left = ''
-      ball.style.top = ''
+      const { left, top } = ball.style;
+      ball.style.left = '';
+      ball.style.top = '';
       if (parseFloat(left) < 30) {
         if (parseFloat(top) < 50) {
-          ball.classList.add('to-top-left')
+          ball.classList.add('to-top-left');
         } else {
-          ball.classList.add('to-bottom-left')
+          ball.classList.add('to-bottom-left');
         }
       } else if (parseFloat(left) > 75) {
         if (parseFloat(top) < 50) {
-          ball.classList.add('to-top-right')
+          ball.classList.add('to-top-right');
         } else {
-          ball.classList.add('to-bottom-right')
+          ball.classList.add('to-bottom-right');
         }
       } else if (parseFloat(top) < 50) {
-        ball.classList.add('to-top-center')
+        ball.classList.add('to-top-center');
       } else {
-        ball.classList.add('to-bottom-center')
+        ball.classList.add('to-bottom-center');
       }
-      hitAudio.play()
-      setTimeout(() => putAudio.play(), 500);
-    })
+      hitAudio.play();
+      setTimeout(() => {
+        putAudio.play();
+        ball.style.opacity = '0';
+      }, 500);
+    });
   };
 }
