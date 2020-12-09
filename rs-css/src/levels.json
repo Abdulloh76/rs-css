@@ -6,9 +6,7 @@
     "description": "Select ball",
     "carpet": [
       {
-        "class": "quarter",
-        "id": "quarter-first",
-        "balls":[
+        "balls": [
           {
             "position": [25, 35]
           }
@@ -18,11 +16,492 @@
       {},
       {}
     ],
+    "holes": []
+  },
+  {
+    "id": 2,
+    "title": "Elements",
+    "selector": "ball",
+    "description": "Select all balls",
+    "carpet": [
+      {
+        "balls": [
+          {
+            "id": 5,
+            "position": [25, 35]
+          }
+        ]
+      },
+      {
+        "balls": [
+          {
+            "id": 2,
+            "position": [65, 35]
+          }
+        ]
+      },
+      {},
+      {
+        "balls": [
+          {
+            "id": 9,
+            "position": [65, 70]
+          },
+          {
+            "class": "orange",
+            "id": 13,
+            "position": [80, 75]
+          }
+        ]
+      }
+    ],
+    "holes": []
+  },
+  {
+    "id": 3,
+    "title": ".class-name",
+    "selector": ".hole-top",
+    "description": "Select holes with class name",
+    "carpet": [
+      {
+        "balls": [
+          {
+            "id": 10,
+            "class": "yellow",
+            "position": [29, 30]
+          }
+        ]
+      },
+      {
+        "balls": [
+          {
+            "id": 1,
+            "class": "valencia",
+            "position": [60, 15]
+          },
+          {
+            "class": "black",
+            "id": 8,
+            "position": [80, 25]
+          }
+        ]
+      },
+      {},
+      {}
+    ],
     "holes": [
       {
-        "class": "hole-top",
-        "id": "hole-top-center"
+        "class": "hole-top"
+      },
+      {
+        "class": "hole-top"
+      },
+      {
+        "class": "hole-top"
+      },
+      {},
+      {},
+      {}
+    ]
+  },
+  {
+    "id": 4,
+    "title": "#id-name",
+    "selector": "#ball-15",
+    "description": "Select ball with id name",
+    "carpet": [
+      {
+        "balls": [
+          {
+            "class": "aqua",
+            "position": [25, 35]
+          }
+        ]
+      },
+      {},
+      {
+        "balls": [
+          {
+            "class": "red",
+            "id": 15,
+            "position": [32, 58]
+          }
+        ]
+      },
+      {}
+    ],
+    "holes": []
+  },
+  {
+    "id": 5,
+    "title": "Nested elements",
+    "selector": ".quarter ball",
+    "description": "Select nested balls in quarter with class-name",
+    "carpet": [
+      {
+        "class": "quarter",
+        "balls": [
+          {
+            "id": 14,
+            "class": "blue",
+            "position": [25, 35]
+          }
+        ]
+      },
+      {},
+      {
+        "class": "quarter",
+        "balls": [
+          {
+            "class": "orange",
+            "position": [29, 65]
+          },
+          {
+            "id": 5,
+            "class": "violet",
+            "position": [38, 75]
+          }
+        ]
+      },
+      {
+        "balls": [
+          {
+            "id": 6,
+            "class": "yellow",
+            "position": [85, 70]
+          }
+        ]
       }
+    ],
+    "holes": []
+  },
+  {
+    "id": 6,
+    "title": "Nested elements",
+    "selector": "#quarter-forth ball",
+    "description": "Select nested balls in quarter with id-name",
+    "carpet": [
+      {
+        "balls": [
+          {
+            "id": 14,
+            "class": "blue",
+            "position": [25, 35]
+          }
+        ]
+      },
+      {},
+      {
+        "class": "quarter",
+        "balls": [
+          {
+            "class": "orange",
+            "position": [29, 65]
+          }
+        ]
+      },
+      {
+        "id": "forth",
+        "balls": [
+          {
+            "id": 6,
+            "class": "yellow",
+            "position": [85, 70]
+          },
+          {
+            "id": 11,
+            "class": "violet",
+            "position": [70, 70]
+          }
+        ]
+      }
+    ],
+    "holes": []
+  },
+  {
+    "id": 7,
+    "title": "Element .class",
+    "selector": "ball.orange",
+    "description": "Select ball with class-name",
+    "carpet": [
+      {
+        "balls": [
+          {
+            "id": 14,
+            "position": [25, 35]
+          }
+        ]
+      },
+      {
+        "balls": [
+          {
+            "class": "orange",
+            "position": [55, 35]
+          }
+        ]
+      },
+      {},
+      {
+        "id": "forth",
+        "balls": [
+          {
+            "id": 12,
+            "position": [85, 70]
+          }
+        ]
+      }
+    ],
+    "holes": []
+  },
+  {
+    "id": 8,
+    "title": "Plus operator",
+    "selector": "ball + ball",
+    "description": "Select second ball in second quarter",
+    "carpet": [
+      {
+        "balls": [
+          {
+            "id": 7,
+            "position": [10, 10]
+          }
+        ]
+      },
+      {
+        "balls": [
+          {
+            "id": 10,
+            "class": "red",
+            "position": [55, 25]
+          },
+          {
+            "id": 6,
+            "class": "aqua",
+            "position": [76, 20]
+          }
+        ]
+      },
+      {},
+      {}
+    ],
+    "holes": []
+  },
+  {
+    "id": 9,
+    "title": "Comma operator",
+    "selector": "#ball-13, #hole-bottom-right",
+    "description": "Select ball and hole in forth quarter",
+    "carpet": [
+      {},
+      {},
+      {
+        "id": "third",
+        "balls": [
+          {
+            "id": 1,
+            "class": "blue",
+            "position": [20, 60]
+          },
+          {
+            "id": 5,
+            "class": "violet",
+            "position": [38, 75]
+          }
+        ]
+      },
+      {
+        "balls": [
+          {
+            "id": 13,
+            "class": "valencia",
+            "position": [76, 55]
+          }
+        ]
+      }
+    ],
+    "holes": [
+      {},
+      {},
+      {},
+      {},
+      {},
+      {
+        "id": "hole-bottom-right"
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "title": "Multiplication operator",
+    "selector": "#quarter-second *",
+    "description": "Select everything in second quarter",
+    "carpet": [
+      {},
+      {
+        "id": "second",
+        "balls": [
+          {
+            "id": 14,
+            "position": [55, 32]
+          },
+          {
+            "class": "yellow",
+            "position": [65, 20]
+          },
+          {
+            "id": 8,
+            "class": "black",
+            "position": [77, 32]
+          },
+          {
+            "id": 2,
+            "position": [87, 20]
+          }
+        ]
+      },
+      {
+        "id": "third",
+        "balls": [
+          {
+            "id": 1,
+            "class": "blue",
+            "position": [20, 60]
+          },
+          {
+            "id": 5,
+            "class": "violet",
+            "position": [38, 75]
+          }
+        ]
+      },
+      {
+        "balls": [
+          {
+            "id": 13,
+            "class": "valencia",
+            "position": [76, 55]
+          }
+        ]
+      }
+    ],
+    "holes": []
+  },
+  {
+    "id": 11,
+    "title": "Tilde operator",
+    "selector": "#hole-top-center ~ .hole-top",
+    "description": "Select hole in top right corner",
+    "carpet": [
+      {},
+      {
+        "id": "second",
+        "balls": [
+          {
+            "id": 11,
+            "class": "yellow",
+            "position": [77, 32]
+          }
+        ]
+      },
+      {},
+      {}
+    ],
+    "holes": [
+      {},
+      {},
+      {
+        "id": "top-right",
+        "class": "hole-top"
+      },
+      {},
+      {},
+      {}
+    ]
+  },
+  {
+    "id": 12,
+    "title": "More than operator",
+    "selector": "#quarter-forth > #ball-4",
+    "description": "Select hole in top right corner",
+    "carpet": [
+      {
+        "class": "quarter",
+        "balls": [
+          {
+            "class": "blue",
+            "position": [30, 30]
+          }
+        ]
+      },
+      {
+        "id": "second"
+      },
+      {},
+      {
+        "class": "quarter",
+        "id": "forth",
+        "balls": [
+          {
+            "class": "blue",
+            "id": 4,
+            "position": [77, 77]
+          }
+        ]
+      }
+    ],
+    "holes": [
+      {},
+      {},
+      {
+        "id": "top-right",
+        "class": "hole-top"
+      },
+      {},
+      {},
+      {}
+    ]
+  },
+  {
+    "id": 13,
+    "title": "More than operator",
+    "selector": "#quarter-forth > #ball-4",
+    "description": "Select hole in top right corner",
+    "carpet": [
+      {
+        "class": "quarter",
+        "balls": [
+          {
+            "class": "blue",
+            "position": [30, 30]
+          }
+        ]
+      },
+      {
+        "id": "second"
+      },
+      {},
+      {
+        "class": "quarter",
+        "id": "forth",
+        "balls": [
+          {
+            "class": "blue",
+            "id": 4,
+            "position": [77, 77]
+          }
+        ]
+      }
+    ],
+    "holes": [
+      {},
+      {},
+      {
+        "id": "top-right",
+        "class": "hole-top"
+      },
+      {},
+      {},
+      {}
     ]
   }
 ]
