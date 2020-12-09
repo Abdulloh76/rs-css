@@ -141,15 +141,18 @@ export default class GenerateContent {
     this.animations.cancelSelectorAnimation = true;
     this.animations.cancelAnswerAnimation = false;
 
+    const levelsProgress = JSON.parse(localStorage.getItem('levelsProgress'));
     const enteredValue = selectorInput.value;
     if (!Number.isNaN(+enteredValue)) {
       this.generateGame(+enteredValue);
     } else if (enteredValue === this.levelsObjects[this.currentLevel - 1].selector) {
       selectorInput.value = '';
-      const checkerClassName = this.gotHelp ? 'icon-helped' : 'icon-checked';
-      this.levelButtons[this.currentLevel - 1].querySelector('svg').classList.add(checkerClassName);
+      const checkerClassName = this.gotHelp ? 'helped' : 'checked';
+      levelsProgress[this.currentLevel - 1] = [this.currentLevel, checkerClassName];
+      this.levelButtons[this.currentLevel - 1].querySelector('svg').classList.add(`icon-${checkerClassName}`);
       setTimeout(() => this.animations.correctAnswerAnimation(), 400);
       setTimeout(() => this.generateGame(this.currentLevel + 1), 1000);
+      localStorage.setItem('levelsProgress', JSON.stringify(levelsProgress));
     } else {
       this.animations.wrongAnswerAnimation(false);
     }
