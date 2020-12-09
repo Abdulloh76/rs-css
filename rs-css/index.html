@@ -89,10 +89,10 @@
                 <li>15</li>
               </ul>
               <div class="editor__code">
-                <div class="editor__selector">
+                <form class="editor__selector" method="dialog">
                   <input class="selector" type="text" placeholder="Type in a CSS selector" />
-                  <button class="enter btn btn-primary">enter</button>
-                </div>
+                  <button class="enter btn btn-primary" type="submit">enter</button>
+                </form>
 
                 <code class="language-css hljs">
                   <p>{</p>
@@ -163,7 +163,8 @@
         <h2 class="levels__title">Level</h2>
 
         <div class="levels-steps">
-          <button class="level button button-primary btn btn-flat">
+          
+          <!-- <button class="level button button-primary btn btn-flat">
             <svg class="icon icon-checked" viewBox="0 0 515.556 515.556">
               <path
                 d="m0 274.226 176.549 176.886 339.007-338.672-48.67-47.997-290.337 290-128.553-128.552z"
@@ -171,98 +172,8 @@
             </svg>
             <span class="level-number">1</span>
             <p class="level-title">element class id</p>
-          </button>
+          </button> -->
 
-          <button class="level button button-primary btn btn-flat">
-            <svg class="icon icon-check" viewBox="0 0 515.556 515.556">
-              <path
-                d="m0 274.226 176.549 176.886 339.007-338.672-48.67-47.997-290.337 290-128.553-128.552z"
-              />
-            </svg>
-            <span class="level-number">2</span>
-            <p class="level-title">element class id</p>
-          </button>
-
-          <button class="level button button-primary btn btn-flat">
-            <svg class="icon icon-checked" viewBox="0 0 515.556 515.556">
-              <path
-                d="m0 274.226 176.549 176.886 339.007-338.672-48.67-47.997-290.337 290-128.553-128.552z"
-              />
-            </svg>
-            <span class="level-number">3</span>
-            <p class="level-title">element class id</p>
-          </button>
-
-          <button class="level button button-primary btn btn-flat button-active">
-            <svg class="icon icon-check" viewBox="0 0 515.556 515.556">
-              <path
-                d="m0 274.226 176.549 176.886 339.007-338.672-48.67-47.997-290.337 290-128.553-128.552z"
-              />
-            </svg>
-            <span class="level-number">4</span>
-            <p class="level-title">element class id</p>
-          </button>
-
-          <button class="level button button-primary btn btn-flat">
-            <svg class="icon icon-checked-help" viewBox="0 0 515.556 515.556">
-              <path
-                d="m0 274.226 176.549 176.886 339.007-338.672-48.67-47.997-290.337 290-128.553-128.552z"
-              />
-            </svg>
-            <span class="level-number">5</span>
-            <p class="level-title">element class id</p>
-          </button>
-
-          <button class="level button button-primary btn btn-flat">
-            <svg class="icon icon-checked" viewBox="0 0 515.556 515.556">
-              <path
-                d="m0 274.226 176.549 176.886 339.007-338.672-48.67-47.997-290.337 290-128.553-128.552z"
-              />
-            </svg>
-            <span class="level-number">6</span>
-            <p class="level-title">element class id</p>
-          </button>
-
-          <button class="level button button-primary btn btn-flat">
-            <svg class="icon icon-check" viewBox="0 0 515.556 515.556">
-              <path
-                d="m0 274.226 176.549 176.886 339.007-338.672-48.67-47.997-290.337 290-128.553-128.552z"
-              />
-            </svg>
-            <span class="level-number">7</span>
-            <p class="level-title">element class id</p>
-          </button>
-
-          <button class="level button button-primary btn btn-flat">
-            <svg class="icon icon-checked" viewBox="0 0 515.556 515.556">
-              <path
-                d="m0 274.226 176.549 176.886 339.007-338.672-48.67-47.997-290.337 290-128.553-128.552z"
-              />
-            </svg>
-            <span class="level-number">8</span>
-            <p class="level-title">element class id</p>
-          </button>
-
-          <button class="level button button-primary btn btn-flat">
-            <svg class="icon icon-check" viewBox="0 0 515.556 515.556">
-              <path
-                d="m0 274.226 176.549 176.886 339.007-338.672-48.67-47.997-290.337 290-128.553-128.552z"
-              />
-            </svg>
-            <span class="level-number">9</span>
-            <p class="level-title">element class id</p>
-          </button>
-
-          <button class="level button button-primary btn btn-flat">
-            <svg class="icon icon-checked" viewBox="0 0 515.556 515.556">
-              <path
-                d="m0 274.226 176.549 176.886 339.007-338.672-48.67-47.997-290.337 290-128.553-128.552z"
-              />
-            </svg>
-            <span class="level-number">10</span>
-            <p class="level-title">element class id</p>
-          </button>
-          <!-- button * 10-20 -->
         </div>
 
         <button class="levels__reset button button-reset btn btn-rounded btn-outline-blue-grey">
@@ -287,6 +198,8 @@
       </a>
     </footer>
 
+    <audio src="./src/hit.mp3" class="hit"></audio>
+    <audio src="./src/put.mp3" class="put"></audio>
     <script type="module" src="./dist/bundle.js"></script>
   </body>
 </html>

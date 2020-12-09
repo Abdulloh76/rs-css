@@ -143,15 +143,23 @@ export default class GenerateContent {
 
     const levelsProgress = JSON.parse(localStorage.getItem('levelsProgress'));
     const enteredValue = selectorInput.value;
+    const checkerClassName = this.gotHelp ? 'helped' : 'checked';
+    const checkerEl = this.levelButtons[this.currentLevel - 1].querySelector('svg');
+    const goal = document.querySelector(this.levelsObjects[this.currentLevel - 1].selector);
+
     if (!Number.isNaN(+enteredValue)) {
-      this.generateGame(+enteredValue);
-    } else if (enteredValue === this.levelsObjects[this.currentLevel - 1].selector) {
       selectorInput.value = '';
-      const checkerClassName = this.gotHelp ? 'helped' : 'checked';
+      this.generateGame(+enteredValue);
+    } else if (goal === document.querySelector(enteredValue)) {
+      selectorInput.value = '';
       levelsProgress[this.currentLevel - 1] = [this.currentLevel, checkerClassName];
+      if (checkerEl.classList[checkerEl.classList.length - 1].includes('ed')) {
+        const removingClassName = Array.from(checkerEl.classList).find((cl) => cl.includes('ed'))
+        checkerEl.classList.remove(removingClassName);
+      }
       this.levelButtons[this.currentLevel - 1].querySelector('svg').classList.add(`icon-${checkerClassName}`);
       setTimeout(() => this.animations.correctAnswerAnimation(), 400);
-      setTimeout(() => this.generateGame(this.currentLevel + 1), 1000);
+      setTimeout(() => this.generateGame(this.currentLevel + 1), 1500);
       localStorage.setItem('levelsProgress', JSON.stringify(levelsProgress));
     } else {
       this.animations.wrongAnswerAnimation(false);

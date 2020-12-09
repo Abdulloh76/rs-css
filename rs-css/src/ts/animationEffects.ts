@@ -42,13 +42,10 @@ export default class Animations {
   public correctAnswerAnimation = () => {
     this.cancelSelectorAnimation = true;
     const balls = Array.from(document.querySelectorAll('ball'));
-    const hitAudio = new Audio();
-    hitAudio.muted = true;
-    hitAudio.src = './src/hit.mp3';
-    const putAudio = new Audio();
-    putAudio.muted = true;
-    putAudio.src = './src/put.mp3';
+    const hitAudio = document.querySelector('.hit') as HTMLAudioElement;
+    const putAudio = document.querySelector('.put') as HTMLAudioElement;
     balls.forEach((el) => {
+      hitAudio.play();
       const ball = el as HTMLElement;
       const { left, top } = ball.style;
       ball.style.left = '';
@@ -70,9 +67,8 @@ export default class Animations {
       } else {
         ball.classList.add('to-bottom-center');
       }
-      hitAudio.play();
+      putAudio.play();
       setTimeout(() => {
-        putAudio.play();
         ball.style.opacity = '0';
       }, 500);
     });
