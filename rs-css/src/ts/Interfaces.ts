@@ -19,6 +19,7 @@ export interface Level {
   id: number;
   title: string;
   selector: string;
+  description: string;
   carpet: Quarter[]; // there would be four arrays as four quarters and balls in each quarter
   holes: Hole[];
 }

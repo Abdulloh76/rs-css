@@ -1,12 +1,9 @@
 import create from './utils/create';
 import { Level } from './Interfaces';
+import { SelectorAnimation } from './animationEffects'
 
-const pool = document.querySelector('.pool');
 const carpet = document.querySelector('.pool-carpet');
 const htmlCodeBlock = document.querySelector('.editor-html code');
-// const holes = document.querySelectorAll('hole');
-const selectorInput = document.querySelector('.editor__selector input');
-const selectorEnter = document.querySelector('.editor__selector .enter');
 const levelsBlock = document.querySelector('.levels-steps');
 
 const tagOpening = '&lt;';
@@ -37,13 +34,18 @@ export default class GenerateContent {
 
   levelsProgress: [number, string][];
 
+  selectorAnimation: SelectorAnimation;
+
   constructor(levelsObjects: Level[], levelsProgress: [number, string][]) {
     this.levelsObjects = levelsObjects;
     this.levelsProgress = levelsProgress;
     this.levelButtons = [];
+    this.selectorAnimation = new SelectorAnimation(null)
   }
 
   generateGame(levelNumber: number) {
+    this.selectorAnimation.cancelAnimation = false;
+    document.querySelector('.game-task').textContent = this.levelsObjects[levelNumber - 1].description;
     document.querySelector('.button-active').classList.remove('button-active')
     this.levelButtons[levelNumber - 1].classList.add('button-active');
     localStorage.setItem('currentLevel', levelNumber.toString());
@@ -96,6 +98,10 @@ export default class GenerateContent {
         create('p', 'hole-p', holeCodeText, htmlCodeBlock);
       })
     }
+
+    // ANIMATION EFFECTS
+    this.selectorAnimation.selector = this.levelsObjects[levelNumber - 1].selector;
+    this.selectorAnimation.selectorAnimation(false);
   }
 
   generateLevels() {

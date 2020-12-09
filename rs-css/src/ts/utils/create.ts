@@ -10,7 +10,7 @@ export default function create(
   el: string,
   classNames: string,
   child: any,
-  parent: HTMLElement,
+  parent: Element,
   ...dataAttr: string[][]
 ): HTMLElement {
   let element: HTMLElement = null;

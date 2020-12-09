@@ -1,4 +1,5 @@
 .editor {
+  font-size: 14px;
   &-css {
     flex-basis: 45%;
   }
@@ -30,19 +31,17 @@
     border-left: 2px solid #dee2e6;
     
     li {
-      font-size: 14px;
       list-style: none;
     }
   }
   
   &__code {
     flex-basis: 95%;
-    padding: 2px;
+    padding: 2px 8px;
     code {
       padding: 0 3px;
     }
     p {
-      font-size: 14px;
       margin: 0;
     }
   }
@@ -52,7 +51,6 @@
     justify-content: space-between;
   }
   .selector {
-    font-size: 14px;
     height: 21px;
     border: unset;
     width: 80%;

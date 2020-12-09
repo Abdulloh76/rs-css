@@ -20,3 +20,18 @@ main {
 p.hovered {
   background: #737373;
 }
+
+.increase {
+  transform: scale(1.05);
+  transition: 0.5s ease-in-out transform;
+}
+.decrease {
+  transform: scale(0.95);
+  transition: 0.5s ease-in-out transform;
+}
+quarter.increase {
+  transform: scale(1.02);
+}
+quarter.decrease {
+  transform: scale(0.98);
+}
