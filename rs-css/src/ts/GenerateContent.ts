@@ -32,13 +32,10 @@ export default class GenerateContent {
 
   levelButtons: HTMLElement[];
 
-  levelsProgress: [number, string][];
-
   selectorAnimation: SelectorAnimation;
 
-  constructor(levelsObjects: Level[], levelsProgress: [number, string][]) {
+  constructor(levelsObjects: Level[]) {
     this.levelsObjects = levelsObjects;
-    this.levelsProgress = levelsProgress;
     this.levelButtons = [];
     this.selectorAnimation = new SelectorAnimation(null)
   }
@@ -99,14 +96,16 @@ export default class GenerateContent {
       })
     }
 
-    // ANIMATION EFFECTS
+    // SELECTOR ANIMATION EFFECTS
     this.selectorAnimation.selector = this.levelsObjects[levelNumber - 1].selector;
     this.selectorAnimation.selectorAnimation(false);
   }
 
-  generateLevels() {
+  generateLevels(levelsProgress: [number, string][]) {
+    this.levelButtons = [];
+    levelsBlock.innerHTML = '';
     for (let i = 0; i < this.levelsObjects.length; i += 1) {
-      const levelStatus = this.levelsProgress[i] ? this.levelsProgress[i][1] : 'check';
+      const levelStatus = levelsProgress[i] ? levelsProgress[i][1] : 'check';
       const levelButton = create(
         'button',
         'level button button-primary btn btn-flat',
