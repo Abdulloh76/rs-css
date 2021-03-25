@@ -1,2 +1,3 @@
 # abdulloh76-JS2020Q3
-Private repository for @abdulloh76
+
+https://rolling-scopes-school.github.io/abdulloh76-JS2020Q3/rs-css/
